@@ -1,4 +1,7 @@
-﻿
+﻿@using WEB6ELTETRADO.Models;
+@model List<Urun>
+
+
 <div class="headd">
     <p>Upload structure in PDB or PDBx/mmCIF format</p>
 
@@ -11,55 +14,58 @@
         <input type="text" />
 
     </form>
-    <input name=Frm2 type="file" id="logo">
+
+    <input name=Frm2 type="file" id="logo" value="sea">
 
 </div>
 
 <button type="button" class="btn btn-danger">Settings</button>
+
+
+
 
 <style>
     #Frm1 {
         display: inline-block;
         margin-right: 10px;
     }
-    #logo{
+
+    #logo {
         display: inline-block;
     }
+
     .btn-danger {
         position: absolute;
         left: 50px;
         top: 156px;
         color: white;
         background-color: #008CBA;
-    
     }
 
     .headd {
         margin-left: 50px;
-        margin-top:15px;
-        margin-bottom:50px;
+        margin-top: 15px;
+        margin-bottom: 50px;
     }
+
     .allthings {
         margin-top: 0px;
         margin-left: 50px;
         margin-right: 500px;
         border: 2px solid #062bbe;
-        
-        
     }
+
     .btn-warning {
         margin-left: 50px;
-        margin-top:10px;
-        margin-bottom:250px;
+        margin-top: 10px;
+        margin-bottom: 250px;
         font-size: 16px;
-    
     }
-    
 </style>
 
 
-    
-    <div class="allthings"
+
+<div class="allthings"
     <!-- Checked checkbox -->
     <div class="chk">
 
@@ -116,7 +122,7 @@
 
     </div>
 
-    
+
     </div>
 
-<button type="button" onclick="window.location.href = 'https://www.tasarimkodlama.com';" class="btn btn-warning">Run</button>
+<button type="button" onclick="window.location.href = 'https://openapi.tools/';" class="btn btn-warning">Run</button>
