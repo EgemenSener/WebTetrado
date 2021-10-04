@@ -227,6 +227,7 @@
     <Content Include="banzhow\css\fonts\pacifico\pacifico-webfont.woff" />
     <Content Include="banzhow\css\fonts\pacifico\pacifico-webfontd41d.eot" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\deneme.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />

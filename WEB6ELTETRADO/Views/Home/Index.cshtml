@@ -1,4 +1,4 @@
-﻿
+﻿<script src="~/Scripts/deneme.js"></script>
 <div class="headd">
     <p>Upload structure in PDB or PDBx/mmCIF format</p>
 
@@ -39,7 +39,7 @@
         margin-top:15px;
         margin-bottom:50px;
     }
-    .allthings {
+    #Frm3 {
         margin-top: 0px;
         margin-left: 50px;
         margin-right: 500px;
@@ -57,16 +57,14 @@
     
 </style>
 
+<form name=Frm3 id=Frm3 method="post" action="#">
 
     
-    <div class="allthings"
     <!-- Checked checkbox -->
     <div class="chk">
 
-            <input class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckDefault" / >
+            <input type="checkbox" id="myCheck" onclick="myFunction()">
+                <p id="text" style="display:none">Checkbox is CHECKED!</p>
             <label class="form-check-label" for="flexCheckDefault" >
             Enable strict mode
             </label >
@@ -116,7 +114,9 @@
 
     </div>
 
-    
-    </div>
 
+    
+
+    
+</form>
 <button type="button" onclick="window.location.href = 'https://www.tasarimkodlama.com';" class="btn btn-warning">Run</button>

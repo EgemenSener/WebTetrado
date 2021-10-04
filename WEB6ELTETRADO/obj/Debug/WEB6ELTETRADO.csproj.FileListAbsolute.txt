@@ -72,7 +72,6 @@ C:\Users\Egemen\source\repos\WEB6ELTETRADO\WEB6ELTETRADO\bin\System.Web.WebPages
 C:\Users\Egemen\source\repos\WEB6ELTETRADO\WEB6ELTETRADO\bin\Newtonsoft.Json.xml
 C:\Users\Egemen\source\repos\WEB6ELTETRADO\WEB6ELTETRADO\bin\Antlr3.Runtime.pdb
 C:\Users\Egemen\source\repos\WEB6ELTETRADO\WEB6ELTETRADO\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Egemen\source\repos\WEB6ELTETRADO\WEB6ELTETRADO\obj\Debug\WEB6ELTETRADO.csproj.AssemblyReference.cache
 C:\Users\Egemen\source\repos\WEB6ELTETRADO\WEB6ELTETRADO\obj\Debug\WEB6ELTETRADO.csproj.CoreCompileInputs.cache
 C:\Users\Egemen\source\repos\WEB6ELTETRADO\WEB6ELTETRADO\obj\Debug\WEB6ELTETRADO.csproj.CopyComplete
 C:\Users\Egemen\source\repos\WEB6ELTETRADO\WEB6ELTETRADO\obj\Debug\WEB6ELTETRADO.dll
