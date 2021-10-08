@@ -11,3 +11,15 @@
         text.style.display = "none";
     }
 }
+function checkFunction() {
+
+    var checkBox = document.getElementById("myCheck");
+    if (checkBox.checked == true) {
+
+        "strict" = true,             
+    }
+    else {
+        "strict" = false,
+    }
+
+}

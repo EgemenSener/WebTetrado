@@ -76,3 +76,4 @@ C:\Users\Egemen\source\repos\WEB6ELTETRADO\WEB6ELTETRADO\obj\Debug\WEB6ELTETRADO
 C:\Users\Egemen\source\repos\WEB6ELTETRADO\WEB6ELTETRADO\obj\Debug\WEB6ELTETRADO.csproj.CopyComplete
 C:\Users\Egemen\source\repos\WEB6ELTETRADO\WEB6ELTETRADO\obj\Debug\WEB6ELTETRADO.dll
 C:\Users\Egemen\source\repos\WEB6ELTETRADO\WEB6ELTETRADO\obj\Debug\WEB6ELTETRADO.pdb
+C:\Users\Egemen\source\repos\WEB6ELTETRADO\WEB6ELTETRADO\obj\Debug\WEB6ELTETRADO.csproj.AssemblyReference.cache

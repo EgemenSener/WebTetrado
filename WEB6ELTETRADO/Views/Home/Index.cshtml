@@ -1,4 +1,6 @@
-﻿<script src="~/Scripts/deneme.js"></script>
+﻿@using WEB6ELTETRADO.Models;
+
+<script src="~/Scripts/deneme.js"></script>
 <div class="headd">
     <p>Upload structure in PDB or PDBx/mmCIF format</p>
 
@@ -57,17 +59,18 @@
     
 </style>
 
-<form name=Frm3 id=Frm3 method="post" action="#">
+<form name=Frm3 id=Frm3 method="post" action="http://localhost:8000/input">
 
     
     <!-- Checked checkbox -->
     <div class="chk">
 
-            <input type="checkbox" id="myCheck" onclick="myFunction()">
-                <p id="text" style="display:none">Checkbox is CHECKED!</p>
-            <label class="form-check-label" for="flexCheckDefault" >
+        <input type="checkbox" id="myCheck" onclick="checkFunction()">
+        <!--<p id="text" style="display:none">Checkbox is CHECKED!</p>-->
+        
+        <label class="form-check-label" for="flexCheckDefault">
             Enable strict mode
-            </label >
+        </label>
 
 
 
