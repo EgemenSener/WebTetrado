@@ -14,6 +14,9 @@
 var checkBox1 = false;
 var checkBox2 = false;
 var checkBox3 = false;
+var radio1 = false;
+var radio2 = false;
+
 
 function checkFunction1() {
 
@@ -51,9 +54,26 @@ function checkFunction3() {
          return checkBox3;
     }
 }
+function checkFunction4() {
+
+    if(document.getElementById("flexRadioDefault1").checked){
+        
+         radio1 = true;
+         radio2 = false;
+         return radio1 , radio2;
+    }
+    else if(document.getElementById("flexRadioDefault2").checked)  { 
+        
+        radio1 = false;
+        radio2 = true;
+        return radio1, radio2;
+    }
+}
+
+
 function printFunction(){
 
-    console.log("Checkbox1 is "+ checkBox1 +" Checkbox2 is " + checkBox2 + " Checkbox3 is "+checkBox3);
+    console.log("Checkbox1 is " + checkBox1 + " Checkbox2 is " + checkBox2 + " Checkbox3 is " + checkBox3 + " Radio button 1 is " + radio1 + " Radio button 2 is " + radio2);
 
 
 }
