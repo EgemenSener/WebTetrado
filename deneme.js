@@ -1,21 +1,22 @@
 ﻿function myFunction() {
     // Get the checkbox
-    var checkBox = document.getElementById("myCheck");
+    //var checkBox = document.getElementById("myCheck");
     // Get the output text
-    var text = document.getElementById("text");
+    
 
     // If the checkbox is checked, display the output text
-    if (checkBox.checked == true) {
+   /* if (checkBox.checked == true) {
         text.style.display = "block";
     } else {
         text.style.display = "none";
-    }
+    } */
 }
 var checkBox1 = false;
 var checkBox2 = false;
 var checkBox3 = false;
 var radio1 = false;
 var radio2 = false;
+
 
 
 function checkFunction1() {
@@ -72,8 +73,7 @@ function checkFunction4() {
 
 
 function printFunction(){
-
-    console.log("Checkbox1 is " + checkBox1 + " Checkbox2 is " + checkBox2 + " Checkbox3 is " + checkBox3 + " Radio button 1 is " + radio1 + " Radio button 2 is " + radio2);
-
+  
+    console.log(document.getElementById("textt").value + " Checkbox1 is " + checkBox1 + " Checkbox2 is " + checkBox2 + " Checkbox3 is " + checkBox3 + " Radio button 1 is " + radio1 + " Radio button 2 is " + radio2);
 
 }
