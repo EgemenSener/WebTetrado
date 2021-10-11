@@ -1,14 +1,8 @@
-#Frm1 {
-    display: inline-block;
-    margin-right: 10px;
-}
-#logo{
-    display: inline-block;
-}
+
 .btn-danger {
     position: absolute;
     left: 50px;
-    top: 156px;
+    top: 178px;
     color: white;
     background-color: #008cba;
 
@@ -18,8 +12,10 @@
     margin-left: 50px;
     margin-top:15px;
     margin-bottom:50px;
+    display: inline-block;
+    margin-right: 10px;
 }
-#Frm3 {
+.chks {
     margin-top: 0px;
     margin-left: 50px;
     margin-right: 500px;

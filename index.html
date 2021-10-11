@@ -68,18 +68,10 @@
             </nav>
             <div class="headd">
                 <p>Upload structure in PDB or PDBx/mmCIF format</p>
-            
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-                <form name=Frm1 id=Frm1 method="post" action="#">
-            
-            
-            
-            
-                    <input type="text" id="textt"/>
-            
-                </form>
-                <input name=Frm2 type="file" id="logo">
-            
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                        <input type="text" id="textt"/>
+                        <input name=Frm2 type="file" id="logo">
+    
             </div>
             
             <button type="button" class="btn btn-danger">Settings</button>
@@ -88,7 +80,7 @@
             
             <form name=Frm3 id=Frm3 method="post" action="http://localhost:8000/input">
             
-                
+              <div class ="chks">
                 <!-- Checked checkbox -->
                 <div class="chk">
             
@@ -122,6 +114,7 @@
                     </label>
             
                 </div>
+              
             
                 <p>Set stacking mismatch: </p>
                 <!-- Radio Button -->
@@ -141,13 +134,15 @@
                     </label>
             
                 </div>
+             </div>
+
+
+
+
                 <div>
                     <button onclick="printFunction()" class="btn btn-warning">Run</button>
                 </div>
-            
-                
-            
-                
+          
             </form>
             
             <div class="footer-after">
