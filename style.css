@@ -2,12 +2,14 @@
 .btn-danger {
     position: absolute;
     left: 50px;
-    top: 178px;
+    top: 156px;
     color: white;
     background-color: #008cba;
 
 }
-
+#logo{
+    display: inline-block;
+}
 .headd {
     margin-left: 50px;
     margin-top:15px;
