@@ -15,7 +15,7 @@ var checkBox1 = false;
 var checkBox2 = false;
 var checkBox3 = false;
 var radio1 = false;
-var radio2 = false;
+var radio2 = true;
 
 
 
@@ -77,3 +77,24 @@ function printFunction(){
     console.log(document.getElementById("textt").value + " Checkbox1 is " + checkBox1 + " Checkbox2 is " + checkBox2 + " Checkbox3 is " + checkBox3 + " Radio button 1 is " + radio1 + " Radio button 2 is " + radio2);
 
 }
+
+function takeResponse(){
+
+    //getUserList();
+    let data = document.getElementById("Frm3").value;
+    
+        fetch("http://localhost:8000/input",{
+            method:"POST",
+            headers:{
+    
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify(data)
+    
+        })
+        .then(response=>response.json())
+        .then(data=>{
+            console.log(data);
+         
+        })
+    }
