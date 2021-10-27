@@ -14,8 +14,8 @@
 var checkBox1 = false;
 var checkBox2 = false;
 var checkBox3 = false;
-var radio1 = false;
-var radio2 = true;
+var radio = 2;
+
 
 
 
@@ -59,29 +59,27 @@ function checkFunction4() {
 
     if(document.getElementById("flexRadioDefault1").checked){
         
-         radio1 = true;
-         radio2 = false;
-         return radio1 , radio2;
+         radio = 1;
+         return radio;
     }
     else if(document.getElementById("flexRadioDefault2").checked)  { 
         
-        radio1 = false;
-        radio2 = true;
-        return radio1, radio2;
+        radio = 2;
+        return radio;
     }
 }
 
-
+// for testing parameters on console 
 function printFunction(){
   
-    console.log(document.getElementById("textt").value + " Checkbox1 is " + checkBox1 + " Checkbox2 is " + checkBox2 + " Checkbox3 is " + checkBox3 + " Radio button 1 is " + radio1 + " Radio button 2 is " + radio2);
-
+    console.log(document.getElementById("textt").value + " Checkbox1 is " + checkBox1 + " Checkbox2 is " + checkBox2 + " Checkbox3 is " + checkBox3 + " Radio button value is " + radio);
+    
 }
 
 function takeResponse(){
 
     //getUserList();
-    let data = document.getElementById("Frm3").value;
+    let data = {checkBox1,checkBox2,checkBox3,radio1,radio2}
     
         fetch("http://localhost:8000/input",{
             method:"POST",
@@ -97,4 +95,4 @@ function takeResponse(){
             console.log(data);
          
         })
-    }
+ }

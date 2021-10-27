@@ -72,7 +72,7 @@
             
           
             
-            <form name=Frm3 id=Frm3 method="post" action="http://localhost:8000/input">
+            <div name=Frm3 id=Frm3>
 
                 <div class="headd">
                     <p>Upload structure in PDB or PDBx/mmCIF format</p>
@@ -86,7 +86,7 @@
                 <!-- Checked checkbox -->
                 <div class="chk">
             
-                    <input type="checkbox" id="myCheck1" onclick="takeResponse()">
+                    <input type="checkbox" id="myCheck1" onclick="checkFunction1()">
                     <!--<p id="text" style="display:none">Checkbox is CHECKED!</p>-->
                     
                     <label class="form-check-label" for="flexCheckDefault">
@@ -142,10 +142,10 @@
 
 
                 <div>
-                    <button onclick="printFunction()" class="btn btn-warning">Run</button>
+                    <button type="button" onclick="printFunction()" class="btn btn-warning">Run</button>
                 </div>
           
-            </form>
+            </div>
             
             <div class="footer-after">
     
