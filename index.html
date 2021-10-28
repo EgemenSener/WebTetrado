@@ -1,8 +1,8 @@
 <!DOCTYPE html>
      <html lang="en">
         <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-        <script src="deneme.js"></script>
         <link rel="stylesheet" href="style.css">
+        
         
         <head>
             <meta charset="utf-8">
@@ -86,7 +86,7 @@
                 <!-- Checked checkbox -->
                 <div class="chk">
             
-                    <input type="checkbox" id="myCheck1" onclick="checkFunction1()">
+                    <input type="checkbox" id="myCheck1" onclick="strictCheck()">
                     <!--<p id="text" style="display:none">Checkbox is CHECKED!</p>-->
                     
                     <label class="form-check-label" for="flexCheckDefault">
@@ -98,7 +98,7 @@
                 </div>
                 <div class="chk">
                     
-                    <input type="checkbox" id="myCheck2" onclick="checkFunction2()">
+                    <input type="checkbox" id="myCheck2" onclick="noReorderCheck()">
                     <!--<p id="text" style="display:none">Checkbox is CHECKED!</p>-->
                    
                     <label class="form-check-label" for="flexCheckChecked">
@@ -108,7 +108,7 @@
                 </div>
                 <div class="chk">
             
-                    <input type="checkbox" id="myCheck3" onclick="checkFunction3()">
+                    <input type="checkbox" id="myCheck3" onclick="complete2dCheck()">
                     <!--<p id="text" style="display:none">Checkbox is CHECKED!</p>-->
 
                     <label class="form-check-label" for="flexCheckChecked">
@@ -122,7 +122,7 @@
                 <!-- Radio Button -->
                 <div class="chk">
             
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" onclick="checkFunction4()">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" onclick="stackingMismatchCheck()">
                     <label class="form-check-label" for="flexRadioDefault1">
                         1
                     </label>
@@ -130,7 +130,7 @@
                 </div>
                 <div class="chk">
             
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" onclick="checkFunction4()"Checked>
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" onclick="stackingMismatchCheck()"Checked>
                     <label class="form-check-label" for="flexRadioDefault2">
                         2
                     </label>
@@ -142,7 +142,7 @@
 
 
                 <div>
-                    <button type="button" onclick="printFunction()" class="btn btn-warning">Run</button>
+                    <button type="button" onclick="getResponse()" class="btn btn-warning">Run</button>
                 </div>
           
             </div>
@@ -161,7 +161,7 @@
               
             
             
-            
+         <script src="deneme.js"></script>
         </body>
             
 

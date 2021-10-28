@@ -19,7 +19,7 @@ var radio = 2;
 
 
 
-function checkFunction1() {
+function strictCheck() {
 
     if(document.getElementById("myCheck1").checked){
 
@@ -31,7 +31,7 @@ function checkFunction1() {
          return checkBox1;
     }
 }
-function checkFunction2(){
+function noReorderCheck(){
     
     if(document.getElementById("myCheck2").checked){
         
@@ -43,7 +43,7 @@ function checkFunction2(){
          return checkBox2;
     }
 }
-function checkFunction3() {
+function complete2dCheck() {
 
     if(document.getElementById("myCheck3").checked){
         
@@ -55,7 +55,7 @@ function checkFunction3() {
          return checkBox3;
     }
 }
-function checkFunction4() {
+function stackingMismatchCheck() {
 
     if(document.getElementById("flexRadioDefault1").checked){
         
@@ -76,10 +76,10 @@ function printFunction(){
     
 }
 
-function takeResponse(){
+function postResponse(){
 
     //getUserList();
-    let data = {checkBox1,checkBox2,checkBox3,radio1,radio2}
+    let data = {checkBox1,checkBox2,checkBox3,radio}
     
         fetch("http://localhost:8000/input",{
             method:"POST",
@@ -95,4 +95,16 @@ function takeResponse(){
             console.log(data);
          
         })
- }
+}
+function getResponse(){
+     let data = {checkBox1, checkBox2, checkBox3, radio}
+     fetch("http://localhost:8000/result/:id")
+     .then(response => response.json())
+     .then(data =>{
+        console.log(data);
+        // for(user of data.basePairs){
+        //     console.log(user);
+        // }
+     })
+}
+
