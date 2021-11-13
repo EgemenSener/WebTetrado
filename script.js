@@ -97,14 +97,25 @@ function postResponse(){
         })
 }
 function getResponse(){
-     let data = {checkBox1, checkBox2, checkBox3, radio}
+     let data = {"strict": checkBox1,"noReorder": checkBox2,"complete2D": checkBox3,"stackingMismatch": radio}
      fetch("http://localhost:8000/result/:id")
      .then(response => response.json())
      .then(data =>{
         console.log(data);
+        //console.log(data);
         // for(user of data.basePairs){
         //     console.log(user);
         // }
      })
 }
+let companies = [
+    
+   {
+    "pdb": "cillum fugiat anim ad",
+    "stackingMismatch": 2,
+    "strict": false,
+    "noReorder": false,
+    "complete2D": false
+    }
+]
 
