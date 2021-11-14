@@ -11,7 +11,7 @@
 <header>
 
     <div class="container-md"
-        style="position: fixed;top: 0;width: 100%; height: 50px; background-color: #080956; border-bottom:2px solid  #16A085; overflow: hidden;">
+        style="position: fixed;z-index: 10000;top: 0;width: 100%; height: 50px; background-color: #080956; border-bottom:2px solid  #16A085; overflow: hidden;">
 
 
 
@@ -26,7 +26,8 @@
 </header>
 
 <body>
-    <div class="row" style="color:#666;position: relative;margin-left: 8%; margin-top: 70px;min-width: 240px;font-size: 14px;width: 92%;">
+    <div class="row"
+        style="color:#666;position: relative;margin-left: 8%; margin-top: 70px;margin-bottom: 60px; min-width: 240px;font-size: 14px;width: 92%;">
         <div class="col-6">
             <div class="borderPanel">
                 <div class="head" style="width: 100%;">
@@ -84,18 +85,9 @@
             </div>
         </div>
         <div class="col-6">
-           <div class="getResultsPanel">
-               <p id="getResultsTable">
-                   <!-- <tr>
-                        <td><input type="text" class="form-control" value=""></td>
-                        <td><input type="text" class="form-control" value=""></td>
-                        <td><input type="text" class="form-control" value=""></td>
-                        <td><input type="text" class="form-control" value=""></td>
-                        <td><input type="text" class="form-control" value=""></td>
-                   </tr> -->
-               </p>
+            <div class="getResultsPanel" id="getResultsPanel">
                
-           </div>
+            </div>
         </div>
     </div>
     <!-- For bootstrap -->

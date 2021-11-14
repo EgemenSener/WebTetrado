@@ -90,12 +90,40 @@ function getResponse() {
             const basePairs = data.basePairs[0];
             // const textBasePairs  = JSON.stringify(basePairs);
             // console.log(basePairs);
-            document.getElementById("getResultsTable").innerHTML +=
-                `<tr>
-                <td><input type="text" class="form-control" value="${basePairs.edge3}"></td>
-                </tr>`
+            // console.log(data)
+            document.getElementById("getResultsPanel").innerHTML += `<p
+            style="position: relative; border: 2px solid #062bbe;font-weight: bold;width: 20%;height:100%; padding:3px;line-height: 200%;">
 
+             value="${basePairs.edge3}"
+             value="${basePairs.edge3}"
+             value="${basePairs.edge3}"
+             value="${basePairs.edge3}"
+             value="${basePairs.edge3}"</p>` +
+             `<p
+            style="position: relative; border: 2px solid #062bbe;font-weight: bold;width: 20%;height:100%; padding:3px;line-height: 200%;">
 
+             value="${basePairs.edge3}"
+             value="${basePairs.edge3}"
+            "</p>` +
+            `<p
+            style="position: relative; border: 2px solid #062bbe;font-weight: bold;width: 20%;height:100%; padding:3px;line-height: 200%;">
+
+             value="${basePairs.edge3}"
+             value="${basePairs.edge3}"
+            "</p>` +
+            `<p
+            style="position: relative; border: 2px solid #062bbe;font-weight: bold;width: 20%;height:100%; padding:3px;line-height: 200%;">
+
+             value="${basePairs.edge3}"
+             value="${basePairs.edge3}"
+             value="${basePairs.edge3}"
+             value="${basePairs.edge3}"
+             value="${basePairs.edge3}"
+             value="${basePairs.edge3}"
+             value="${basePairs.edge3}"
+             value="${basePairs.edge3}"
+             value="${basePairs.edge3}"
+             value="${basePairs.edge3}"</p>`
         })
 }
 let companies = [
