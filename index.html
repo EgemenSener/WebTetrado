@@ -26,61 +26,76 @@
 </header>
 
 <body>
-    <div class="row" style="width: 100%;">
-        <div class="borderPanel"
-            style="color:#666;position: relative;margin-left: 8%; margin-top: 70px;margin-right: 50%;min-width: 240px;font-size: 14px;">
-            <div class="head" style="width: 100%;">
-                <p>Upload structure in PDB or PDBx/mmCIF format</p>
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-                <input type="text" id="textt" />
-                <input name=Frm2 type="file" id="logo">
+    <div class="row" style="color:#666;position: relative;margin-left: 8%; margin-top: 70px;min-width: 240px;font-size: 14px;width: 100%;">
+        <div class="col-6">
+            <div class="borderPanel">
+                <div class="head" style="width: 100%;">
+                    <p>Upload structure in PDB or PDBx/mmCIF format</p>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                    <input type="text" id="textt" />
+                    <input name=Frm2 type="file" id="logo">
 
-            </div>
-            <button type="button"
-                style="margin-top:20px;margin-bottom: 1px; height:30px;width:80px;background-color: #008cba;padding: 0px; position: relative;color: white;"
-                class="btn btn-primary">Settings</button>
-            <div class="checkboxesRadioButtons"
-                style="position: relative; border: 2px solid #062bbe;font-weight: bold;width: 70%;padding:3px;line-height: 200%;">
-                <div>
-                    <input type="checkbox" id="myCheck1" onclick="strictCheck()">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Enable strict mode
-                    </label>
                 </div>
-                <div>
-                    <input type="checkbox" id="myCheck2" onclick="noReorderCheck()">
-                    <label class="form-check-label" for="flexCheckChecked">
-                        Disable chain ordering
-                    </label>
-                </div>
-                <div>
-                    <input type="checkbox" id="myCheck3" onclick="complete2dCheck()">
-                    <label class="form-check-label" for="flexCheckChecked">
-                        Draw complete 2D structure
-                    </label>
-                </div>
-                <p style="font-weight: normal; margin-bottom: 4%;">Set stacking mismatch: </p>
-                <div>
-                    <input type="radio" name="flexRadioDefault" id="flexRadioDefault1"
-                        onclick="stackingMismatchCheck()">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        1
-                    </label>
-                </div>
-                <div>
-                    <input type="radio" name="flexRadioDefault" id="flexRadioDefault2" onclick="stackingMismatchCheck()"
-                        Checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        2
-                    </label>
-                </div>
-
-            </div>
-            <div>
                 <button type="button"
-                    style="margin-top:10px; height:30px;width:50px;background-color:#f0ad4e;color:white;padding: 0px;"
-                    onclick="getResponse()" class="btn btn-warning">Run</button>
+                    style="margin-top:20px;margin-bottom: 1px; height:30px;width:80px;background-color: #008cba;padding: 0px; position: relative;color: white;"
+                    class="btn btn-primary">Settings</button>
+                <div class="checkboxesRadioButtons"
+                    style="position: relative; border: 2px solid #062bbe;font-weight: bold;width: 70%;padding:3px;line-height: 200%;">
+                    <div>
+                        <input type="checkbox" id="myCheck1" onclick="strictCheck()">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Enable strict mode
+                        </label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="myCheck2" onclick="noReorderCheck()">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Disable chain ordering
+                        </label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="myCheck3" onclick="complete2dCheck()">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            Draw complete 2D structure
+                        </label>
+                    </div>
+                    <p style="font-weight: normal; margin-bottom: 4%;">Set stacking mismatch: </p>
+                    <div>
+                        <input type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                            onclick="stackingMismatchCheck()">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            1
+                        </label>
+                    </div>
+                    <div>
+                        <input type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                            onclick="stackingMismatchCheck()" Checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            2
+                        </label>
+                    </div>
+
+                </div>
+                <div>
+                    <button type="button"
+                        style="margin-top:10px; height:30px;width:50px;background-color:#f0ad4e;color:white;padding: 0px;"
+                        onclick="getResponse()" class="btn btn-warning">Run</button>
+                </div>
             </div>
+        </div>
+        <div class="col-6">
+           <div class="getResultsPanel">
+               <p id="getResultsTable">
+                   <!-- <tr>
+                        <td><input type="text" class="form-control" value=""></td>
+                        <td><input type="text" class="form-control" value=""></td>
+                        <td><input type="text" class="form-control" value=""></td>
+                        <td><input type="text" class="form-control" value=""></td>
+                        <td><input type="text" class="form-control" value=""></td>
+                   </tr> -->
+               </p>
+               
+           </div>
         </div>
     </div>
     <!-- For bootstrap -->
