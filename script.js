@@ -97,7 +97,7 @@ function getResponse() {
             const nucleotides = data.nucleotides[0];
             // const textBasePairs  = JSON.stringify(basePairs);
             // console.log(basePairs);
-            console.log(helicesQuadruplexes)
+            console.log(data.helices[0])
             document.getElementById("getResultsPanel").innerHTML += `<p
             style="position: relative; border: 2px solid #062bbe;font-weight: bold;width: 100%;height:100%; padding:3px;line-height: 200%;color: #0000EE;">
 
@@ -144,12 +144,16 @@ function getResponse() {
                     </p>
                     <p style="margin-left: 10px;">TRACTS:
                         <p style="margin-left: 20px;">0="${hQtracts[0]}"</p>
-                    
-                    
-                    
-                    
-                    
+           
                     </p>
+                </p>
+                <p>TETRADPAIRS:
+                    <p style="margin-left: 10px;">direction="${helicesTetradPairs.direction}"</p>
+                    <p style="margin-left: 10px;">rise="${helicesTetradPairs.rise}"</p>
+                    <p style="margin-left: 10px;">tetrad1="${helicesTetradPairs.tetrad1}"</p>
+                    <p style="margin-left: 10px;">tetrad2="${helicesTetradPairs.tetrad2}"</p>
+                    <p style="margin-left: 10px;">twist="${helicesTetradPairs.twist}"</p>
+
                 </p>
             </p>` +
                 `<p
