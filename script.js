@@ -88,42 +88,65 @@ function getResponse() {
         .then(data => {
             // console.log(data);
             const basePairs = data.basePairs[0];
+            const helicesQuadruplexes = data.helices[0].quadruplexes[0];
+            const hQLoops = helicesQuadruplexes.loops[0];
+            const hQtetrads = helicesQuadruplexes.tetrads[0];
+            const hQtracts = helicesQuadruplexes.tracts[0];
+            const helicesTetradPairs = data.helices[0].tetradPairs[0];
+            const metals = data.metals[0];
+            const nucleotides = data.nucleotides[0];
             // const textBasePairs  = JSON.stringify(basePairs);
             // console.log(basePairs);
-            // console.log(data)
+            console.log(helicesQuadruplexes)
             document.getElementById("getResultsPanel").innerHTML += `<p
-            style="position: relative; border: 2px solid #062bbe;font-weight: bold;width: 20%;height:100%; padding:3px;line-height: 200%;">
+            style="position: relative; border: 2px solid #062bbe;font-weight: bold;width: 100%;height:100%; padding:3px;line-height: 200%;color: #0000EE;">
 
-             value="${basePairs.edge3}"
-             value="${basePairs.edge3}"
-             value="${basePairs.edge3}"
-             value="${basePairs.edge3}"
-             value="${basePairs.edge3}"</p>` +
-             `<p
-            style="position: relative; border: 2px solid #062bbe;font-weight: bold;width: 20%;height:100%; padding:3px;line-height: 200%;">
+             edge3="${basePairs.edge3}"
+             edge5="${basePairs.edge5}"
+             nt1="${basePairs.nt1}"
+             nt2="${basePairs.nt2}"
+             stericity="${basePairs.stericity}"</p>` +
+                `<p
+            style="position: relative; border: 2px solid #062bbe;font-weight: bold;width: 100%;height:100%; padding:3px;line-height: 200%;">
+                
+                <p>QUADRUPLEXES:
+                    <p style="margin-left: 10px;">gbaClassification="${helicesQuadruplexes.gbaClassification}"</p>
+                    <p style="margin-left: 10px;">loopClassification="${helicesQuadruplexes.loopClassification}"</p>
+                    <p style="margin-left: 10px;">LOOPS:
+                        
+                        <p style="margin-left: 20px;">type="${hQLoops.type}"</p>
+                        <p style="margin-left: 20px;">NUCLEOTIDES:
+                            <p style="margin-left: 30px;">0="${hQLoops.nucleotides[0]}"</p>
 
-             value="${basePairs.edge3}"
-             value="${basePairs.edge3}"
+                        </p>
+                    </p>
+                    <p style="margin-left: 10px;">onzm="${helicesQuadruplexes.onzm}"</p>
+                    <p style="margin-left: 10px;">TETRADS:
+                    
+                        
+                    
+                    </p>
+                </p>
+            </p>` +
+                `<p
+            style="position: relative; border: 2px solid #062bbe;font-weight: bold;width: 100%;height:100%; padding:3px;line-height: 200%;">
+
+                count="${metals.count}"
+                symbol="${metals.symbol}"
             "</p>` +
-            `<p
-            style="position: relative; border: 2px solid #062bbe;font-weight: bold;width: 20%;height:100%; padding:3px;line-height: 200%;">
+                `<p
+            style="position: relative; border: 2px solid #062bbe;font-weight: bold;width: 100%;height:100%; padding:3px;line-height: 200%;">
 
-             value="${basePairs.edge3}"
-             value="${basePairs.edge3}"
-            "</p>` +
-            `<p
-            style="position: relative; border: 2px solid #062bbe;font-weight: bold;width: 20%;height:100%; padding:3px;line-height: 200%;">
-
-             value="${basePairs.edge3}"
-             value="${basePairs.edge3}"
-             value="${basePairs.edge3}"
-             value="${basePairs.edge3}"
-             value="${basePairs.edge3}"
-             value="${basePairs.edge3}"
-             value="${basePairs.edge3}"
-             value="${basePairs.edge3}"
-             value="${basePairs.edge3}"
-             value="${basePairs.edge3}"</p>`
+             chain="${nucleotides.chain}"
+             chi="${nucleotides.chi}"
+             fullName="${nucleotides.fullName}"
+             glycosidicBond="${nucleotides.glycosidicBond}"
+             icode="${nucleotides.icode}"
+             index="${nucleotides.index}"
+             model="${nucleotides.model}"
+             molecule="${nucleotides.molecule}"
+             number="${nucleotides.number}"
+             shortName="${nucleotides.shortName}"</p>`
         })
 }
 let companies = [
