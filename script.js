@@ -96,8 +96,8 @@ function getResponse() {
             const metals = data.metals[0];
             const nucleotides = data.nucleotides[0];
             // const textBasePairs  = JSON.stringify(basePairs);
-            // console.log(basePairs);
-            console.log(metals)
+            console.log(data);
+            // console.log(metals)
             document.getElementById("getResultsPanel").innerHTML += `<p
             style="position: relative; border: 2px solid #062bbe;font-weight: bold;width: 100%;height:100%; padding:3px;line-height: 200%;color: #0000EE;">
 
@@ -106,7 +106,7 @@ function getResponse() {
              nt1="${basePairs.nt1}"
              nt2="${basePairs.nt2}"
              stericity="${basePairs.stericity}"</p>` +
-                `<p
+                `<div
             style="position: relative; border: 2px solid #062bbe;font-weight: bold;width: 100%;height:100%; padding:3px;line-height: 200%;">
                 
                 <p>QUADRUPLEXES:
@@ -155,7 +155,7 @@ function getResponse() {
                     <p style="margin-left: 10px;">twist="${helicesTetradPairs.twist}"</p>
 
                 </p>
-            </p>` +
+            </div>` + `<p></p>` +
                 `<p
             style="position: relative; border: 2px solid #062bbe;font-weight: bold;width: 100%;height:100%; padding:3px;line-height: 200%;">
 
