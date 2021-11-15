@@ -97,7 +97,7 @@ function getResponse() {
             const nucleotides = data.nucleotides[0];
             // const textBasePairs  = JSON.stringify(basePairs);
             // console.log(basePairs);
-            console.log(data.helices[0])
+            console.log(metals)
             document.getElementById("getResultsPanel").innerHTML += `<p
             style="position: relative; border: 2px solid #062bbe;font-weight: bold;width: 100%;height:100%; padding:3px;line-height: 200%;color: #0000EE;">
 
@@ -161,7 +161,7 @@ function getResponse() {
 
                 count="${metals.count}"
                 symbol="${metals.symbol}"
-            "</p>` +
+            </p>` +
                 `<p
             style="position: relative; border: 2px solid #062bbe;font-weight: bold;width: 100%;height:100%; padding:3px;line-height: 200%;">
 
