@@ -122,8 +122,32 @@ function getResponse() {
                     </p>
                     <p style="margin-left: 10px;">onzm="${helicesQuadruplexes.onzm}"</p>
                     <p style="margin-left: 10px;">TETRADS:
-                    
+                        <p style="margin-left: 20px;">gbaClassification="${hQtetrads.gbaClassification}"</p>
+                        <p style="margin-left: 20px;">id="${hQtetrads.id}"</p>
+                        <p style="margin-left: 20px;">IONSCHANNEL:
+                            <p style="margin-left: 30px;">0="${hQtetrads.ionsChannel[0]}"</p>
+
+                        </p>
+                        <p style="margin-left: 20px;">IONSOUTSIDE:
+                            <p style="margin-left: 30px;">ion="${hQtetrads.ionsOutside[0].ion}"</p>
+                            <p style="margin-left: 30px;">nt="${hQtetrads.ionsOutside[0].nt}"</p>
+
+                        </p>
+                        <p style="margin-left: 20px;">nt1="${hQtetrads.nt1}"</p>
+                        <p style="margin-left: 20px;">nt2="${hQtetrads.nt2}"</p>
+                        <p style="margin-left: 20px;">nt3="${hQtetrads.nt3}"</p>
+                        <p style="margin-left: 20px;">nt4="${hQtetrads.nt4}"</p>
+                        <p style="margin-left: 20px;">onz="${hQtetrads.onz}"</p>
+                        <p style="margin-left: 20px;">planarityDeviation="${hQtetrads.planarityDeviation}"</p>
                         
+                    
+                    </p>
+                    <p style="margin-left: 10px;">TRACTS:
+                        <p style="margin-left: 20px;">0="${hQtracts[0]}"</p>
+                    
+                    
+                    
+                    
                     
                     </p>
                 </p>
