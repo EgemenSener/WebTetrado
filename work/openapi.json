@@ -1,0 +1,624 @@
+{
+    "openapi": "3.0.4",
+    "info": {
+      "title": "WebTetrado API",
+      "version": "1"
+    },
+    "components": {
+      "schemas": {
+        "edge": {
+          "type": "string",
+          "enum": [
+            "Watson-Crick",
+            "Hoogsteen",
+            "Sugar"
+          ]
+        },
+        "ion": {
+          "type": "string",
+          "enum": [
+            "Ag",
+            "Au",
+            "Ba",
+            "Ca",
+            "Co",
+            "Cs",
+            "Cu",
+            "Eu",
+            "Fe",
+            "Ir",
+            "K",
+            "Li",
+            "Mg",
+            "Mn",
+            "Na",
+            "Ni",
+            "Os",
+            "Pb",
+            "Pt",
+            "Ru",
+            "Sr",
+            "Tl",
+            "V",
+            "Zn"
+          ]
+        },
+        "input": {
+          "type": "object",
+          "required": [
+            "pdb"
+          ],
+          "properties": {
+            "pdb": {
+              "type": "string"
+            },
+            "stackingMismatch": {
+              "type": "integer",
+              "default": 2,
+              "minimum": 1,
+              "maximum": 2
+            },
+            "strict": {
+              "type": "boolean",
+              "default": false
+            },
+            "noReorder": {
+              "type": "boolean",
+              "default": false
+            },
+            "complete2D": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        },
+        "result": {
+          "type": "object",
+          "required": [
+            "metals",
+            "nucleotides",
+            "basePairs",
+            "helices"
+          ],
+          "properties": {
+            "metals": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "symbol",
+                  "count"
+                ],
+                "properties": {
+                  "symbol": {
+                    "$ref": "#/components/schemas/ion"
+                  },
+                  "count": {
+                    "type": "integer",
+                    "minimum": 1
+                  }
+                }
+              }
+            },
+            "nucleotides": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "index",
+                  "model",
+                  "chain",
+                  "number",
+                  "icode",
+                  "molecule",
+                  "fullName",
+                  "shortName",
+                  "chi",
+                  "glycosidicBond"
+                ],
+                "properties": {
+                  "index": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "model": {
+                    "type": "integer"
+                  },
+                  "chain": {
+                    "type": "string"
+                  },
+                  "number": {
+                    "type": "integer"
+                  },
+                  "icode": {
+                    "type": "string"
+                  },
+                  "molecule": {
+                    "type": "string",
+                    "enum": [
+                      "DNA",
+                      "RNA",
+                      "Other"
+                    ]
+                  },
+                  "fullName": {
+                    "type": "string"
+                  },
+                  "shortName": {
+                    "type": "string"
+                  },
+                  "chi": {
+                    "type": "number",
+                    "minimum": -180,
+                    "maximum": 180
+                  },
+                  "glycosidicBond": {
+                    "type": "string",
+                    "enum": [
+                      "anti",
+                      "syn",
+                      "..."
+                    ]
+                  }
+                }
+              }
+            },
+            "basePairs": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "nt1",
+                  "nt2",
+                  "stericity",
+                  "edge5",
+                  "edge3"
+                ],
+                "properties": {
+                  "nt1": {
+                    "type": "string"
+                  },
+                  "nt2": {
+                    "type": "string"
+                  },
+                  "stericity": {
+                    "type": "string",
+                    "enum": [
+                      "cis",
+                      "trans"
+                    ]
+                  },
+                  "edge5": {
+                    "$ref": "#/components/schemas/edge"
+                  },
+                  "edge3": {
+                    "$ref": "#/components/schemas/edge"
+                  }
+                }
+              }
+            },
+            "helices": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "quadruplexes",
+                  "tetradPairs"
+                ],
+                "properties": {
+                  "quadruplexes": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "tetrads",
+                        "onzm",
+                        "loopClassification",
+                        "gbaClassification",
+                        "tracts",
+                        "loops"
+                      ],
+                      "properties": {
+                        "tetrads": {
+                          "type": "array",
+                          "required": [
+                            "id",
+                            "nt1",
+                            "nt2",
+                            "nt3",
+                            "nt4",
+                            "onz",
+                            "gbaClassification",
+                            "planarityDeviation",
+                            "ionsChannel",
+                            "ionsOutside"
+                          ],
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "nt1": {
+                                "type": "string"
+                              },
+                              "nt2": {
+                                "type": "string"
+                              },
+                              "nt3": {
+                                "type": "string"
+                              },
+                              "nt4": {
+                                "type": "string"
+                              },
+                              "onz": {
+                                "type": "string",
+                                "enum": [
+                                  "O+",
+                                  "O-",
+                                  "N+",
+                                  "N-",
+                                  "Z+",
+                                  "Z-"
+                                ]
+                              },
+                              "gbaClassification": {
+                                "type": "string",
+                                "enum": [
+                                  "Ia",
+                                  "IIa",
+                                  "IIIa",
+                                  "IVa",
+                                  "Va",
+                                  "VIa",
+                                  "VIIa",
+                                  "VIIIa",
+                                  "Ib",
+                                  "IIb",
+                                  "IIIb",
+                                  "IVb",
+                                  "Vb",
+                                  "VIb",
+                                  "VIIb",
+                                  "VIIIb"
+                                ]
+                              },
+                              "planarityDeviation": {
+                                "type": "number",
+                                "minimum": 0
+                              },
+                              "ionsChannel": {
+                                "type": "array",
+                                "items": {
+                                  "$ref": "#/components/schemas/ion"
+                                }
+                              },
+                              "ionsOutside": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "required": [
+                                    "nt",
+                                    "ion"
+                                  ],
+                                  "properties": {
+                                    "nt": {
+                                      "type": "string"
+                                    },
+                                    "ion": {
+                                      "$ref": "#/components/schemas/ion"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "onzm": {
+                          "type": "string",
+                          "enum": [
+                            "Op+",
+                            "Op-",
+                            "Op*",
+                            "Oa+",
+                            "Oa-",
+                            "Oa*",
+                            "Oh+",
+                            "Oh-",
+                            "Oh*",
+                            "Np+",
+                            "Np-",
+                            "Np*",
+                            "Na+",
+                            "Na-",
+                            "Na*",
+                            "Nh+",
+                            "Nh-",
+                            "Nh*",
+                            "Zp+",
+                            "Zp-",
+                            "Zp*",
+                            "Za+",
+                            "Za-",
+                            "Za*",
+                            "Zh+",
+                            "Zh-",
+                            "Zh*"
+                          ]
+                        },
+                        "loopClassification": {
+                          "type": "string",
+                          "enum": [
+                            "1a",
+                            "2a",
+                            "3a",
+                            "4a",
+                            "5a",
+                            "6a",
+                            "7a",
+                            "8a",
+                            "9a",
+                            "10a",
+                            "11a",
+                            "12a",
+                            "13a",
+                            "1b",
+                            "2b",
+                            "3b",
+                            "4b",
+                            "5b",
+                            "6b",
+                            "7b",
+                            "8b",
+                            "9b",
+                            "10b",
+                            "11b",
+                            "12b",
+                            "13b"
+                          ]
+                        },
+                        "gbaClassification": {
+                          "type": "string",
+                          "enum": [
+                            "I",
+                            "II",
+                            "III",
+                            "IV",
+                            "V",
+                            "VI",
+                            "VII",
+                            "VIII"
+                          ]
+                        },
+                        "tracts": {
+                          "type": "array",
+                          "items": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "loops": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "required": [
+                              "type",
+                              "nucleotides"
+                            ],
+                            "properties": {
+                              "type": {
+                                "type": "string",
+                                "enum": [
+                                  "diagonal",
+                                  "propeller-",
+                                  "propeller+",
+                                  "lateral-",
+                                  "lateral+"
+                                ]
+                              },
+                              "nucleotides": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "tetradPairs": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "tetrad1",
+                        "tetrad2",
+                        "direction",
+                        "rise",
+                        "twist"
+                      ],
+                      "properties": {
+                        "tetrad1": {
+                          "type": "string"
+                        },
+                        "tetrad2": {
+                          "type": "string"
+                        },
+                        "direction": {
+                          "type": "string",
+                          "enum": [
+                            "parallel",
+                            "antiparallel",
+                            "hybrid"
+                          ]
+                        },
+                        "rise": {
+                          "type": "number",
+                          "minimum": 0
+                        },
+                        "twist": {
+                          "type": "number",
+                          "minimum": 0
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": {
+        "idParam": {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "paths": {
+      "/input": {
+        "post": {
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/input"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Ok",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad request",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "errorMessage": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/result/{id}": {
+        "get": {
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/idParam"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Ok",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/result"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not found"
+            }
+          }
+        }
+      },
+      "/varna/{id}": {
+        "get": {
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/idParam"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Ok",
+              "content": {
+                "image/svg+xml": {}
+              }
+            },
+            "404": {
+              "description": "Not found"
+            }
+          }
+        }
+      },
+      "/r-chie/{id}": {
+        "get": {
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/idParam"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Ok",
+              "content": {
+                "image/svg+xml": {}
+              }
+            },
+            "404": {
+              "description": "Not found"
+            }
+          }
+        }
+      },
+      "/layers/{id}": {
+        "get": {
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/idParam"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Ok",
+              "content": {
+                "image/svg+xml": {}
+              }
+            },
+            "404": {
+              "description": "Not found"
+            }
+          }
+        }
+      }
+    },
+    "servers": [
+      {
+        "url": "http://localhost:8080/api/v1",
+        "description": "Development server"
+      }
+    ]
+  }

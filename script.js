@@ -180,15 +180,4 @@ function getResponse() {
         //      <p>number="${nucleotides.number}"</p>
         //      <p>shortName="${nucleotides.shortName}"</p></div>` + `<p></p>`
         // })
-}
-let companies = [
-
-    {
-        "pdb": "cillum fugiat anim ad",
-        "stackingMismatch": 2,
-        "strict": false,
-        "noReorder": false,
-        "complete2D": false
-    }
-]
-
+};

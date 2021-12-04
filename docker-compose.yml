@@ -1,9 +1,14 @@
-version: '3'
-
+version: "3.9"
 services:
-  web:
-    image: php:7.3-apache
-    ports: 
-    - "9998:80"
+  frontend:
+    image: egemensener/web-tetrado
+    ports:
+      - "8080:80"
+
+  backend:
+    image: danielgtaylor/apisprout
+    ports:
+      - "8000:8000"
     volumes:
-    - .:/var/www/html/
+      - ./work:/work
+    command: /work/openapi.json
