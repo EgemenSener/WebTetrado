@@ -45,7 +45,7 @@ function getResponse() {
         <td>${hQtetrads.nt4}</td>
         <td>${hQtetrads.onz}</td>
         <td>${gbaClassification}</td>
-        <td>${hQtetrads.planarityDeviation}</td>
+        <td>${hQtetrads.planarityDeviation.toFixed(3)}</td>
         <td>${ionsChannel}</td>
         <td>${ionsOutside}</td>
         </tr>`
@@ -62,8 +62,8 @@ function getResponse() {
         <td>${helicesTetradPairs.tetrad1}</td> 
         <td>${helicesTetradPairs.tetrad2}</td>
         <td>${helicesTetradPairs.direction}</td>
-        <td>${helicesTetradPairs.rise}</td>
-        <td>${helicesTetradPairs.twist}</td>
+        <td>${helicesTetradPairs.rise.toFixed(3)}</td>
+        <td>${helicesTetradPairs.twist.toFixed(3)}</td>
         </tr>`
     }
 
@@ -84,7 +84,7 @@ function getResponse() {
         <td>${nucleotides.molecule}</td>
         <td>${nucleotides.fullName}</td>
         <td>${nucleotides.shortName}</td>
-        <td>${nucleotides.chi}</td>
+        <td>${nucleotides.chi.toFixed(3)}</td>
         <td>${nucleotides.glycosidicBond}</td>
         </tr>`
     }
