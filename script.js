@@ -82,13 +82,100 @@ function postResponse() {
         })
 }
 function getResponse() {
-
+    document.getElementById("resultsPanel").style.visibility = "visible";
     fetch("http://localhost:8000/result/:id")
         .then(response => response.json())
         .then(data => {
-            document.getElementById("json").textContent = JSON.stringify(data, undefined, 2);
+            for (basePairs of data.basePairs) {
+                document.getElementById("basePairs").innerHTML += `<tr>
+                <td>${basePairs.edge3}</td> 
+                <td>${basePairs.edge5}</td>
+                <td>${basePairs.nt1}</td>
+                <td>${basePairs.nt2}</td>
+                <td>${basePairs.stericity}</td>
+                </tr>`
+            }
+        
+            helicesQuadruplexes = data.helices[0].quadruplexes[0]
+            document.getElementById("helicesQuadruplexes").innerHTML += `<tr>
+                <td>${helicesQuadruplexes.gbaClassification}</td> 
+                <td>${helicesQuadruplexes.loopClassification}</td>
+                <td>↓</td>
+                <td>${helicesQuadruplexes.onzm}</td>
+                <td>↓</td>
+                <td>↓</td>
+                </tr>`
+        
+            for (hQLoops of data.helices[0].quadruplexes[0].loops) {
+                document.getElementById("hQLoopsElements").innerHTML += `<tr>
+                    <td>${hQLoops.type}</td> 
+                    <td>${hQLoops.nucleotides}</td>
+                    </tr>`
+            }
+        
+        
+            console.log(data.helices[0].quadruplexes[0])
+            for (hQtetrads of data.helices[0].quadruplexes[0].tetrads) {
+                gbaClassification = JSON.stringify(hQtetrads.gbaClassification)
+                ionsOutside = JSON.stringify(hQtetrads.ionsOutside)
+                ionsChannel = JSON.stringify(hQtetrads.ionsChannel)
+                document.getElementById("hQtetradsElements").innerHTML += `<tr>
+                <td>${hQtetrads.id}</td> 
+                <td>${hQtetrads.nt1}</td>
+                <td>${hQtetrads.nt2}</td>
+                <td>${hQtetrads.nt3}</td>
+                <td>${hQtetrads.nt4}</td>
+                <td>${hQtetrads.onz}</td>
+                <td>${gbaClassification}</td>
+                <td>${hQtetrads.planarityDeviation.toFixed(3)}</td>
+                <td>${ionsChannel}</td>
+                <td>${ionsOutside}</td>
+                </tr>`
+            }
+        
+            for (hQtracts of data.helices[0].quadruplexes[0].tracts) {
+                document.getElementById("hQTractsElements").innerHTML += `<tr>
+                <td>${hQtracts}</td> 
+                </tr>`
+            }
+        
+            for (helicesTetradPairs of data.helices[0].tetradPairs) {
+                document.getElementById("helicesTetradPairs").innerHTML += `<tr>
+                <td>${helicesTetradPairs.tetrad1}</td> 
+                <td>${helicesTetradPairs.tetrad2}</td>
+                <td>${helicesTetradPairs.direction}</td>
+                <td>${helicesTetradPairs.rise.toFixed(3)}</td>
+                <td>${helicesTetradPairs.twist.toFixed(3)}</td>
+                </tr>`
+            }
+        
+            for (metals of data.metals) {
+                document.getElementById("metals").innerHTML += `<tr>
+                <td>${metals.symbol}</td>
+                <td>${metals.count}</td>
+                </tr>`
+            }
+        
+            for (nucleotides of data.nucleotides) {
+                document.getElementById("nucleotides").innerHTML += `<tr>
+                <td>${nucleotides.index}</td>
+                <td>${nucleotides.model}</td>
+                <td>${nucleotides.chain}</td>
+                <td>${nucleotides.number}</td>
+                <td>${nucleotides.icode}</td>
+                <td>${nucleotides.molecule}</td>
+                <td>${nucleotides.fullName}</td>
+                <td>${nucleotides.shortName}</td>
+                <td>${nucleotides.chi.toFixed(3)}</td>
+                <td>${nucleotides.glycosidicBond}</td>
+                </tr>`
+            }
             
         })
+        // .then(data => {
+        //     document.getElementById("json").textContent = JSON.stringify(data, undefined, 2);
+            
+        // })
         // .then(data => {
         //     // console.log(data);
         //     const basePairs = data.basePairs[0];
